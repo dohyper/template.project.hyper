@@ -20,4 +20,4 @@ jobs:
       - name: update dependencies
         run: helm dependency update chart
       - name: deploy
-        run: KUBECONFIG=/tmp/kubeconfig helm upgrade --install closter chart --namespace closter --create-namespace
+        run: KUBECONFIG=/tmp/kubeconfig helm upgrade --install project chart --namespace project --create-namespace
