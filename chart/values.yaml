@@ -1,0 +1,101 @@
+identity-hyper-chart:
+  configuration:
+    port: 1337
+    password: password
+    database:
+      type: postgres
+      url:
+    ingress: {}
+
+0-discovery-hyper-chart:
+  configuration:
+    port: 1337
+    password: password
+    ingress: {}
+
+interface-hyper-chart:
+  configuration:
+    port: 1337
+    resources_service_hyper: {}
+    identity: {}
+    internationalization: {}
+    discovery: {}
+    database: {}
+    ingress: {}
+
+internationalization-hyper-chart:
+  configuration:
+    port: 1337
+    username: hyper
+    password: hyper
+    database:
+      url:
+    ingress: {}
+
+intelligence-hyper-chart:
+  configuration:
+    port: 1337
+    discovery: {}
+    interface: {}
+    database:
+      url:
+    cubejs:
+      port: 4000
+    resources_service_hyper: {}
+
+application-hyper-chart:
+  configuration:
+    port: 80
+    ingress: {}
+
+authorization-hyper-chart:
+  configuration:
+    identity:
+      interface_hyper_client_secret: secret
+      hyper_realm_administrator_password: password
+    resources_service_hyper: {}
+
+resources-service-hyper:
+  configuration:
+    port: 1337
+    discovery: {}
+
+governance-service-hyper:
+  configuration:
+    port: 1337
+    discovery: {}
+    identity: {}
+
+presentation-service-hyper:
+  configuration:
+    port: 1337
+    discovery: {}
+    identity: {}
+    database:
+      url:
+
+objects-service-hyper:
+  configuration:
+    port: 1337
+    discovery: {}
+    s3:
+      url: s3://pilot.hyper
+      access_key: access_key
+      secret_key: secret_key
+
+etc-service-hyper:
+  configuration:
+    port: 1337
+    discovery: {}
+    database:
+      url:
+
+attributes-service-hyper: {}
+
+global:
+  ingress:
+    issuer: letsencrypt-staging
+  host: template.projects.hyper.mathematikoi.agency
+  database:
+    url: postgres://postgres:secretpassword@database-postgresql:5432
+  discovery: {}

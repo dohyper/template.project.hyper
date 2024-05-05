@@ -1,0 +1,6 @@
+dependencies:
+- name: chart-hyper
+  repository: https://dohyper.github.io/chart.hyper
+  version: 0.1.0
+digest: sha256:e1b561abd689b6c47c41600dbcb966cde49a1c61cd3dccf63be69215aae38e2f
+generated: "2024-01-11T22:48:56.105186969Z"

@@ -1,0 +1,23 @@
+name: deploy
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: setup helm
+        uses: azure/setup-helm@v3
+      - name: set k8s context
+        run: "echo $\{{ secrets.KUBECONFIG }} | base64 -d > /tmp/kubeconfig"
+      - name: add helm repo
+        run: helm repo add hyper https://dohyper.github.io/chart.hyper
+      - name: update dependencies
+        run: helm dependency update chart
+      - name: deploy
+        run: KUBECONFIG=/tmp/kubeconfig helm upgrade --install {{ release }} chart --namespace {{ namespace }} --create-namespace
